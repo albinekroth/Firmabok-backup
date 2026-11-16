@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privat rclone-integration som säkerhetskopierar en självhostad Firmabok-installation till Google Drive.">
+  <meta name="color-scheme" content="light">
+  <title>Firmabok Backup – Privat Google Drive-säkerhetskopiering</title>
+  <style>
+    :root { color-scheme: light; --ink:#173248; --muted:#516677; --border:#dfe7eb; --accent:#076e63; --soft:#eaf5f0; }
+    * {box-sizing:border-box} html{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body{margin:0;background:#f7faf9;color:var(--ink);line-height:1.65}
+    .wrap{max-width:800px;padding:0 26px;margin:auto}
+    header{background:#fff;border-bottom:1px solid var(--border)}
+    .head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:17px;padding-bottom:17px}
+    .brand{font-weight:750;letter-spacing:-.02em;color:var(--ink);text-decoration:none}
+    nav a{color:var(--accent);font-weight:650;text-decoration:none} nav a:hover{text-decoration:underline}
+    main{padding:78px 0 84px}
+    .eyebrow{font-size:.8rem;text-transform:uppercase;letter-spacing:.13em;color:var(--accent);font-weight:750}
+    h1{font-size:clamp(2.25rem,6vw,3.75rem);line-height:1.11;letter-spacing:-.045em;max-width:670px;margin:18px 0 24px}
+    h2{font-size:1.35rem;line-height:1.25;margin:0 0 11px;letter-spacing:-.02em}
+    p{margin:0 0 18px} .lead{font-size:1.18rem;color:var(--muted);max-width:680px}
+    .panel{background:white;border:1px solid var(--border);border-radius:16px;padding:29px;margin:36px 0}
+    .panel p:last-child{margin-bottom:0}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+    .tags span{display:inline-block;background:var(--soft);border:1px solid #d2e7dc;border-radius:100px;padding:6px 13px;font-size:.85rem;font-weight:650;color:#13594f}
+    a{color:var(--accent)}
+    footer{border-top:1px solid var(--border);padding:22px 0 38px;color:var(--muted);font-size:.88rem}
+    footer .wrap{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+    @media(max-width:560px){main{padding:52px 0 56px}.panel{padding:22px}.head{flex-wrap:wrap}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap head"><a class="brand" href="./">Firmabok Backup</a><nav aria-label="Huvudnavigation"><a href="privacy.html">Integritetspolicy</a></nav></div></header>
+  <main class="wrap">
+    <div class="eyebrow">Privat säkerhetskopiering</div>
+    <h1>Egna säkerhetskopior till Google Drive.</h1>
+    <p class="lead">Firmabok Backup är namnet på en privat rclone-konfiguration som används för att säkerhetskopiera data från en självhostad installation av bokföringsprogrammet Firmabok till ägarens eget Google Drive-konto.</p>
+    <div class="tags"><span>Privat bruk</span><span>rclone</span><span>Google Drive API</span><span>Ubuntu-server</span></div>
+    <section class="panel" aria-labelledby="how"><h2 id="how">Vad gör anslutningen?</h2>
+      <p>Med <a href="https://rclone.org/">rclone</a> och Google Drive API kan servern föra över säkerhetskopior till Google Drive och läsa tillbaka dem för återställning. Åtkomsten begränsas av de behörigheter som ägaren har godkänt i Googles inloggningsflöde.</p>
+      <p>Avsikten är att säkerhetskopiorna ska krypteras lokalt med rclone crypt innan uppladdning. Kryptering och schemaläggning måste konfigureras separat; webbplatsen utför inte själv någon säkerhetskopiering.</p>
+    </section>
+    <section aria-labelledby="who"><h2 id="who">Vem är tjänsten till för?</h2>
+      <p>Denna Google OAuth-klient används av dess ägare för personlig drift. Det finns ingen publik registrering, ingen molntjänst för andra användare och ingen betalningsfunktion. Webbplatsen är en informationssida för Google OAuth-samtycke.</p>
+      <p>Detta är ett självständigt backupupplägg och inte en officiell tjänst från Firmaboks eller rclones utvecklare.</p>
+    </section>
+    <section class="panel" aria-labelledby="data"><h2 id="data">Hur hanteras uppgifterna?</h2>
+      <p>Åtkomsten till Google Drive används endast för säkerhetskopiering och återställning inom det Google-konto som ägaren själv anslutit. Läs mer i <a href="privacy.html">integritetspolicyn</a> om vilka uppgifter rclone behandlar, var de lagras och hur åtkomst återkallas.</p>
+    </section>
+  </main>
+  <footer><div class="wrap"><span>Firmabok Backup · Privat rclone-konfiguration</span><a href="privacy.html">Integritetspolicy</a></div></footer>
+</body>
+</html>
